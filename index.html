@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for nyasha • favorite flower • balloon sky</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+    
+        body {
+            min-height: 100vh;
+            background: linear-gradient(125deg, #ffd9e8 0%, #ffc3d0 40%, #fbe9f0 100%);
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+            animation: bgPulse 14s infinite alternate;
+        }
+
+        @keyframes bgPulse {
+            0% { background: linear-gradient(125deg, #ffe0ec, #ffc2d5, #ffe4f0); }
+            50% { background: linear-gradient(125deg, #ffe6f0, #ffb7cc, #ffeaf5); }
+            100% { background: linear-gradient(125deg, #ffd5e5, #ffc0d5, #ffe0f0); }
+        }
+        
+
+        /* ---------- BALLOON PARADISE (20+ balloons, vibrant, romantic) ---------- */
+        .balloon-utopia {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -200px;
+            width: 60px;
+            height: 80px;
+            background: radial-gradient(circle at 30% 30%, #fff9, #ffb0c0);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: inset -10px -10px 8px rgba(0,0,0,0.05), 0 10px 20px rgba(255, 80, 120, 0.4);
+            animation: floatUp 16s linear infinite;
+            transform-origin: center;
+            will-change: transform;
+            backdrop-filter: blur(2px);
+            border: 2px solid #fff9;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 65px;
+            background: linear-gradient(45deg, #aaa8, #fffc);
+            bottom: -65px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 4px #fffa;
+        }
+
+        /* different strings */
+        .balloon:nth-child(odd)::after { background: linear-gradient(45deg, #ccb, #fffa); height: 70px; bottom: -70px; }
+        .balloon:nth-child(3n)::after { background: #ffc1cc; height: 55px; bottom: -55px; }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.9;
+                bottom: -200px;
+            }
+            40% { transform: translateY(-40vh) rotate(4deg) scale(1.05); opacity: 1; }
+            80% { transform: translateY(-90vh) rotate(-3deg) scale(1.1); opacity: 0.8; }
+            100% {
+                transform: translateY(-130vh) rotate(6deg) scale(1.2);
+                opacity: 0.2;
+                bottom: 110%;
+            }
+        }
+
+        /* 23 unique balloons — vibrant colors, extra shiny */
+        .balloon:nth-child(1) { left: 2%; width: 58px; height: 78px; background: #ff99bb; animation-duration: 14s; animation-delay: 0s; }
+        .balloon:nth-child(2) { left: 8%; width: 72px; height: 94px; background: #ffcc99; animation-duration: 19s; animation-delay: 1.5s; }
+        .balloon:nth-child(3) { left: 15%; width: 62px; height: 82px; background: #b3e0ff; animation-duration: 22s; animation-delay: 0.2s; }
+        .balloon:nth-child(4) { left: 22%; width: 80px; height: 105px; background: #fbc0cb; animation-duration: 17s; animation-delay: 3s; }
+        .balloon:nth-child(5) { left: 29%; width: 68px; height: 90px; background: #c5a3ff; animation-duration: 24s; animation-delay: 2.2s; }
+        .balloon:nth-child(6) { left: 36%; width: 55px; height: 73px; background: #ffdba6; animation-duration: 13s; animation-delay: 4s; }
+        .balloon:nth-child(7) { left: 43%; width: 76px; height: 100px; background: #ffa8d2; animation-duration: 21s; animation-delay: 0.7s; }
+        .balloon:nth-child(8) { left: 50%; width: 64px; height: 86px; background: #a8e6cf; animation-duration: 18s; animation-delay: 2.8s; }
+        .balloon:nth-child(9) { left: 57%; width: 52px; height: 70px; background: #ffb3b3; animation-duration: 15s; animation-delay: 5s; }
+        .balloon:nth-child(10) { left: 64%; width: 70px; height: 92px; background: #f7c0ff; animation-duration: 23s; animation-delay: 1.2s; }
+        .balloon:nth-child(11) { left: 71%; width: 60px; height: 80px; background: #ffe085; animation-duration: 16s; animation-delay: 3.5s; }
+        .balloon:nth-child(12) { left: 78%; width: 82px; height: 108px; background: #b5d9ff; animation-duration: 25s; animation-delay: 4.8s; }
+        .balloon:nth-child(13) { left: 85%; width: 58px; height: 78px; background: #fec9bb; animation-duration: 19s; animation-delay: 0.3s; }
+        .balloon:nth-child(14) { left: 92%; width: 66px; height: 88px; background: #ffb0e6; animation-duration: 14s; animation-delay: 2.2s; }
+        .balloon:nth-child(15) { left: 96%; width: 50px; height: 68px; background: #c5f0cb; animation-duration: 20s; animation-delay: 3.9s; }
+        .balloon:nth-child(16) { left: 12%; width: 74px; height: 98px; background: #ffb7b0; animation-duration: 18s; animation-delay: 5.6s; }
+        .balloon:nth-child(17) { left: 19%; width: 62px; height: 83px; background: #e3c9ff; animation-duration: 22s; animation-delay: 1.9s; }
+        .balloon:nth-child(18) { left: 32%; width: 69px; height: 91px; background: #ffd6a0; animation-duration: 15s; animation-delay: 4.2s; }
+        .balloon:nth-child(19) { left: 45%; width: 56px; height: 75px; background: #ffbdd3; animation-duration: 24s; animation-delay: 0.9s; }
+        .balloon:nth-child(20) { left: 60%; width: 78px; height: 103px; background: #bae1ff; animation-duration: 17s; animation-delay: 2.4s; }
+        .balloon:nth-child(21) { left: 74%; width: 64px; height: 86px; background: #f9c7d3; animation-duration: 21s; animation-delay: 3.3s; }
+        .balloon:nth-child(22) { left: 82%; width: 71px; height: 95px; background: #fff0b5; animation-duration: 16s; animation-delay: 4.9s; }
+        .balloon:nth-child(23) { left: 90%; width: 54px; height: 72px; background: #e0b0ff; animation-duration: 23s; animation-delay: 0.4s; }
+        .balloon:nth-child(24) { left: 5%; width: 67px; height: 89px; background: #ffc9de; animation-duration: 19s; animation-delay: 3.7s; }
+        .balloon:nth-child(25) { left: 25%; width: 73px; height: 97px; background: #c2f0d6; animation-duration: 14s; animation-delay: 5.2s; }
+
+        /* main card — glowing, romantic, crisp */
+        .card {
+            position: relative;
+            z-index: 20;
+            max-width: 720px;
+            width: 100%;
+            background: rgba(255, 248, 245, 0.9);
+            backdrop-filter: blur(14px);
+            border-radius: 60px 20px 60px 20px;
+            box-shadow: 0 40px 60px rgba(230, 70, 120, 0.4), 0 0 0 4px #fff, 0 0 0 12px #ffb6c9, 0 20px 40px rgba(255, 50, 100, 0.3);
+            padding: 2.8rem 2.5rem;
+            text-align: center;
+            transition: 0.3s;
+            border: 2px solid #ffeef2;
+        }
+
+        .card:hover {
+            box-shadow: 0 50px 70px rgba(245, 60, 130, 0.5), 0 0 0 5px #fff, 0 0 0 16px #ffa5bd, 0 25px 50px #ff9bb0;
+            transform: scale(1.01);
+        }
+
+        .name-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .name-block h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #c63b5e, #e6496e, #b34360);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 4px 4px 0 #ffe2ec, 6px 6px 0 rgba(255, 150, 180, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .flower-tag {
+            background: #ffdae7;
+            padding: 0.5rem 2rem;
+            border-radius: 80px;
+            font-size: 2rem;
+            color: #ad1f4b;
+            border: 3px solid white;
+            box-shadow: 0 8px 0 #d47b98, 0 12px 18px #fcaec0;
+            transform: rotate(-2deg);
+            transition: 0.2s;
+            font-weight: 500;
+        }
+
+        .flower-tag:hover {
+            transform: rotate(3deg) scale(1.05);
+            background: #ffdfec;
+            box-shadow: 0 10px 0 #d47b98, 0 14px 22px #ff90af;
+        }
+
+        /* apology box - bright & attractive */
+        .apology-box {
+            background: rgba(255, 240, 248, 0.9);
+            border-radius: 48px 12px 48px 12px;
+            padding: 2.2rem 2.2rem;
+            margin: 2rem 0 2rem;
+            border: 4px solid #ffb0c6;
+            font-size: 1.4rem;
+            line-height: 1.9;
+            color: #32242b;
+            box-shadow: inset 0 -4px 0 #ffb8cd, 0 18px 20px -16px #e77397, 0 0 0 2px #fff5;
+            text-align: left;
+        }
+
+        .apology-box p {
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .apology-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .emoji-big {
+            font-size: 2.6rem;
+            filter: drop-shadow(2px 6px 8px #f598b0);
+            min-width: 56px;
+            text-align: center;
+        }
+
+        .flirty-line {
+            background: #ffe2ed;
+            border-radius: 60px 10px 60px 10px;
+            padding: 1.2rem 2rem;
+            font-weight: 600;
+            font-size: 1.8rem;
+            color: #b3234b;
+            margin: 2rem 0;
+            border: 3px solid #ff99b9;
+            border-left-width: 14px;
+            border-left-color: #ff4770;
+            box-shadow: 0 12px 0 #d46589, 0 20px 20px -10px #f992ad;
+            text-align: center;
+        }
+
+        .joke {
+            background: #fff2f7;
+            border-radius: 40px 8px 40px 8px;
+            padding: 1.2rem 2rem;
+            font-size: 1.5rem;
+            border-left: 14px solid #ff6f96;
+            margin: 2rem 0;
+            box-shadow: 0 12px 0 #dd7d9b, 0 12px 18px #ffb1c3;
+            font-weight: 400;
+        }
+
+        .joke span {
+            vertical-align: middle;
+        }
+
+        .signature-love {
+            margin-top: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .signature-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 2rem;
+            background: #ffdae8;
+            padding: 0.7rem 2.5rem;
+            border-radius: 80px;
+            border: 4px solid white;
+            box-shadow: 0 12px 0 #cc7f99, 0 18px 24px #faa5bb;
+            color: #9e2c51;
+            font-weight: 500;
+        }
+
+        .balloon-string {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 3.2rem;
+            margin: 1rem 0 0.5rem;
+            animation: floatBob 4s infinite alternate ease-in-out;
+            filter: drop-shadow(0 10px 8px #f68ba7);
+        }
+
+        @keyframes floatBob {
+            0% { transform: translateY(0px) rotate(-1deg); }
+            100% { transform: translateY(-18px) rotate(2deg); }
+        }
+
+        .footnote {
+            font-size: 1.3rem;
+            background: #ffe6f0;
+            padding: 0.8rem 2.2rem;
+            border-radius: 80px;
+            color: #a42552;
+            border: 3px dashed #ff94b4;
+            font-weight: 500;
+            box-shadow: 0 8px 0 #e298b0;
+        }
+
+        /* floating sparkles */
+        .sparkle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+            font-size: 2rem;
+            color: rgba(255, 230, 240, 0.7);
+        }
+
+        .sparkle-bg span {
+            position: absolute;
+            animation: twinkle 6s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+            100% { opacity: 1; transform: scale(1.5) rotate(15deg); }
+        }
+
+        /* lots of little hearts / flowers */
+        .extra-floating {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 550px) {
+            .card { padding: 1.8rem; }
+            .name-block h1 { font-size: 3.2rem; }
+            .flower-tag { font-size: 1.5rem; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 25+ balloons — extra vibrant and romantic -->
+    <div class="balloon-utopia">
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div><div class="balloon"></div>
+        <div class="balloon"></div><div class="balloon"></div>
+    </div>
+
+    <!-- floating hearts / stars / sparkles -->
+    <div class="sparkle-bg">
+        <span style="top: 8%; left: 12%;">✨</span>
+        <span style="top: 73%; left: 86%;">💫</span>
+        <span style="top: 42%; left: 22%;">🌟</span>
+        <span style="top: 88%; left: 42%;">🌸</span>
+        <span style="top: 15%; left: 66%;">🌼</span>
+        <span style="top: 52%; left: 92%;">💖</span>
+        <span style="top: 68%; left: 5%;">🌺</span>
+        <span style="top: 35%; left: 74%;">✨</span>
+        <span style="top: 95%; left: 78%;">💕</span>
+    </div>
+
+    <!-- main card: exactly your apology + vibrant balloons everywhere -->
+    <div class="card">
+        <div class="name-block">
+            <h1>Nyasha</h1>
+            <span class="flower-tag">🌸 my favorite flower 🌸</span>
+        </div>
+
+        <!-- YOUR APOLOGY (exact) -->
+        <div class="apology-box">
+            <p>
+                <span class="emoji-big">🌸</span>
+                Nyasha… about that moment.
+            </p>
+
+            <p>
+                <span class="emoji-big">😔</span>
+                I know I fumbled a little. And I hate the thought of doing anything
+                that dims your smile — even for a second.
+            </p>
+
+            <div class="flirty-line">
+                Because you deserve to be treated like something rare… not ordinary.
+            </div>
+
+            <div class="joke">
+                <span style="font-size:2.4rem; margin-right:10px;">😌</span> 
+                I may not always get it perfectly right…  
+                but my intentions with you are always genuine.
+            </div>
+
+            <p style="font-size:1.5rem;">
+                <span class="emoji-big">💗</span>
+                I’m sorry Daisy my favorite flower
+            </p>
+
+            <p style="font-style:italic; font-size:1.4rem;">
+                <span class="emoji-big">✨</span>
+                And if I ever trip again, I promise it’ll only be because I’m
+                distracted by how incredible you are.
+            </p>
+        </div>
+
+        <!-- signature & balloon row (extra shiny) -->
+        <div class="signature-love">
+            <div class="signature-row">
+                <span>💘</span>
+                <span>always your guy</span>
+                <span>💘</span>
+            </div>
+            <div class="balloon-string">
+                🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈
+            </div>
+            <div class="footnote">
+                i come with balloons, a soft apology, and infinite admiration for you.
+            </div>
+            <div style="font-size:3rem; margin-top:0.8rem; filter: drop-shadow(0 12px 10px #f98dab);">
+                🎈 🌸 🎈 🌸 🎈
+            </div>
+            <p style="margin-top:1.2rem; background:#ffdeec; padding:0.6rem 2.2rem; border-radius:80px; color:#b3204b; font-size:1.4rem; border:2px solid white; box-shadow:0 6px 0 #d889a1;">
+                my favorite flower, forgive me? 💌
+            </p>
+            <p style="color:#a53f60; margin-top:1rem; font-size:1.2rem;">(and yes, that's 25+ balloons just for you)</p>
+        </div>
+    </div>
+
+    <script>
+        console.log("🌸 Nyasha, these balloons are nothing compared to how you light up my world.");
+    </script>
+</body>
+</html>
